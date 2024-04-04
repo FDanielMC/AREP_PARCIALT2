@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Aplicación web para buscar un valor de una lista mediante una búsqueda lineal o búsqueda binaria:</h1>
+<h2>Recuerde separar los números por comas y sin espacios por ejemplo: 1,2,3,4,5</h2>
+<h2>Busqueda Lineal</h2>
+<form action="/linearsearch">
+    <label style="font-weight:bold" for="linearsearchList">Lista:</label><br>
+    <input type="text" id="linearsearchList" name="linearsearchList" value=""><br>
+    <label style="font-weight:bold" for="linearsearchValue">Valor a buscar:</label><br>
+    <input type="text" id="linearsearchValue" name="linearsearchValue" value=""><br>
+    <input type="button" value="Submit" onclick="loadGetMsg('linearsearch')">
+</form>
+<div>Result:</div>
+<div id="result-linearsearch"></div><br>
+<h2>Busqueda Binaria</h2>
+<h3>Recuerde que los valores deben estar ordenados</h3>
+<form action="/binarysearch">
+    <label style="font-weight:bold" for="binarysearchList">Lista:</label><br>
+    <input type="text" id="binarysearchList" name="binarysearchList" value=""><br>
+    <label style="font-weight:bold" for="binarysearchValue">Valor a buscar:</label><br>
+    <input type="text" id="binarysearchValue" name="binarysearchValue" value=""><br>
+    <input type="button" value="Submit" onclick="loadGetMsg('binarysearch')">
+</form>
+<div>Result:</div>
+<div id="result-binarysearch"></div><br>
+<script>
+    function loadGetMsg(operation) {
+        let list = document.getElementById(operation + "List").value;
+        let value = document.getElementById(operation + "Value").value;
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("result-" + operation).innerHTML =
+            this.responseText;
+        }
+        xhttp.open("GET", "/" + operation +"?list=" + list + "&value=" + value);
+        xhttp.send();
+    }
+</script>
+</body>
+</html>
