@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 import static spark.Spark.*;
@@ -53,31 +54,39 @@ public class MathServices {
 
     public static int binary(String[] list, String value) {
         int intValue = Integer.parseInt(value);
-        ArrayList<Integer> listValues =  stringListToIntegerList(list);
+        int[] listValues =  stringListToIntegerList(list);
         int result = -1;
-
+        int middle = listValues.length/2;        // Mitad del array
+        if (listValues[middle] == intValue)
+            result = middle;
+        else if (listValues.length == 1)
+            result = -1;
+        else if (listValues[middle] > intValue)
+            return binary(Arrays.copyOfRange(listValues,0,middle),intValue);
+        else
+            return binary(Arrays.copyOfRange(listValues,middle+1,listValues.length),intValue);
         return result;
     }
 
 
     public static int linear(String[] list, String value) {
         int intValue = Integer.parseInt(value);
-        ArrayList<Integer> listValues =  stringListToIntegerList(list);
+        int[] listValues =  stringListToIntegerList(list);
         int result = -1;
-        for(Integer i: listValues){
-            if(i == intValue){
-                result = listValues.indexOf(i);
+        for(int i = 0; i < listValues.length;i++){
+            if(listValues[i] == intValue){
+                result = i;
             }
         }
         return result;
     }
 
-    public static ArrayList<Integer> stringListToIntegerList(String[] list){
-        ArrayList<Integer> integerList = new ArrayList<Integer>();
-        for(int i = 0; i < list.length; i++){
-            integerList.add(Integer.parseInt(list[i]));
+    public static int[] stringListToIntegerList(String[] list){
+        int[] listInt = new int[list.length];
+        for(int i = 0; i < listInt.length; i++){
+            listInt[i] = Integer.parseInt(list[i]);
         }
-        return integerList;
+        return listInt;
     }
 
 }
