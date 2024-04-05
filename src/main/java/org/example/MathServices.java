@@ -12,14 +12,14 @@ public class MathServices {
 
 
     public static void main(String[] args) {
-        staticFiles.location("/public");
+        //staticFiles.location("/public");
         port(getPort());
         get("/linearsearch", (req, res) -> {
             res.type("application/json");
             String[] list = req.queryParams("list").split(",");
             String value = req.queryParams("value");
             System.out.println("linear: " + value);
-            String output = Integer.toString(linear(list,value));
+            String output = Integer.toString(linear(stringListToIntegerList(list),Integer.parseInt(value)));
             System.out.println(jsonResponse("linear", req.queryParams("list"), value, output == "-1" ? ERROR : output));
             return jsonResponse("linear", req.queryParams("list"), value, output == "-1" ? ERROR : output);
         });
@@ -28,7 +28,7 @@ public class MathServices {
             String[] list = req.queryParams("list").split(",");
             String value = req.queryParams("value");
             System.out.println("binary: " + value);
-            String output = Integer.toString(linear(list,value));
+            String output = Integer.toString(binary(stringListToIntegerList(list),Integer.parseInt(value)));
             return jsonResponse("binary", req.queryParams("list"), value, output == "-1" ? ERROR : output);
         });
     }
@@ -41,7 +41,6 @@ public class MathServices {
         return 4568;
     }
 
-
     public static String jsonResponse(String operation, String inputList, String inputValue, String output) {
         return "{" +
                 " \"operation\": \"" + operation + "\"," +
@@ -51,30 +50,24 @@ public class MathServices {
                 "}";
     }
 
+    public static int binary(int[] list, int value) {
+        return recursiveBinary(list, value, 0, list.length-1);
+    }
 
-    public static int binary(String[] list, String value) {
-        int intValue = Integer.parseInt(value);
-        int[] listValues =  stringListToIntegerList(list);
+    private static int recursiveBinary(int[] list, int value, int first, int last) {
         int result = -1;
-        int middle = listValues.length/2;        // Mitad del array
-        if (listValues[middle] == intValue)
-            result = middle;
-        else if (listValues.length == 1)
-            result = -1;
-        else if (listValues[middle] > intValue)
-            return binary(Arrays.copyOfRange(listValues,0,middle),intValue);
-        else
-            return binary(Arrays.copyOfRange(listValues,middle+1,listValues.length),intValue);
+        int middle = first + (last - first) / 2;
+        if (first > last) result =-1; // El elemento no se encontró.
+        if (list[middle] == value) result = middle;
+        else if (list[middle] > value) result = recursiveBinary(list, value, first, middle - 1);
+        else result = recursiveBinary(list, value, middle + 1, last);
         return result;
     }
 
-
-    public static int linear(String[] list, String value) {
-        int intValue = Integer.parseInt(value);
-        int[] listValues =  stringListToIntegerList(list);
+    public static int linear(int[] list, int value) {
         int result = -1;
-        for(int i = 0; i < listValues.length;i++){
-            if(listValues[i] == intValue){
+        for(int i = 0; i < list.length;i++){
+            if(list[i] == value){
                 result = i;
             }
         }
@@ -90,5 +83,3 @@ public class MathServices {
     }
 
 }
-
-
