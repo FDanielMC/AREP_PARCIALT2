@@ -1,35 +1,90 @@
+# IntelliJ
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+.idea/
 *.iml
-*.ipr
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
+# Sublime
+*.sublime-workspace
+
+# Eclipse
 .settings
-.springBeans
-.sts4-cache
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# VS Code
+.project
+.classpath
+.vscode/*
+# Ignore all local history of files
+**/.history
+
+# Java
+*.class
+target/
+
+# C
+*.so
+
+# Python
+*.pyc
+*.egg-info
+__pycache__
+.ipynb_checkpoints
+.Python
+dist/
+.python-version
+.installed.cfg
+*.egg
+reqlib-metadata
+.mypy_cache/
+.venv
+venv/
 build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# Byte-compiled / optimized / DLL files
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
 
-### Mac OS ###
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+.pytest_cache/
+
+# NPM / Node / JavaScript
+.npm
+node_modules/
+jspm_packages/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# vim temporary files
+*~
+.*.sw?
+
+# Other Artifacts
+hs_err_pid*
+*.log
+*.swp
+*.swo
+temp/*
 .DS_Store
