@@ -103,3 +103,19 @@ java -cp target/AREP_PT2-1.0-SNAPSHOT.jar org.example.ServiceProxy
 ```
 java -cp target/AREP_PT2-1.0-SNAPSHOT.jar org.example.MathServices
 ```
+
+### Vídeo Desplegando el Programa
+
+
+
+## Authors
+
+* **Daniel Fernando Moreno Cerón** - [FDanielMC](https://github.com/FDanielMC)
+
+### Licencia
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+### Agradecimientos
+
+Escuela Colombiana de Ingeniería
