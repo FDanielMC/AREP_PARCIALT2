@@ -193,7 +193,8 @@ Terminal de la instancia a la que el proxy le dirigió la petición:
 
 ### Vídeo Desplegando el Programa
 
-
+[![Video de YouTube](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/ce80061f-586d-4b90-8b90-eb094139c40a)
+](https://youtu.be/USUlRKGgAKE?si=cJIhXNZd0VcN5f4M)
 
 ## Authors
 
