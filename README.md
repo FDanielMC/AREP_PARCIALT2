@@ -1,6 +1,6 @@
 # AREP PARCIAL TERCIO 2
 
-Aplicación web para encontrar el índice de un valor dado de una lista de enteros. El programa está desplegado en tres máquinas virtuales de EC2 de AWS. Las tecnologías usadas en la solución son maven, git, github, sparkjava, html5, y js.
+El proyecto implica la creación de dos componentes clave: una aplicación web para explorar los algoritmos de búsqueda lineal y binaria, y un sistema de microservicios destinado al ordenamiento de funciones, acompañado de un proxy que dirigirá las solicitudes entre las distintas instancias del servicio. Además, se diseñará un cliente web básico para la interacción con el proxy y los servicios de ordenamiento. Todo el desarrollo se llevará a cabo utilizando las tecnologías mencionadas, y la implementación se desplegará en instancias de máquinas virtuales EC2 en AWS.
 
 ## Primeros Pasos
 
@@ -9,6 +9,29 @@ Aplicación web para encontrar el índice de un valor dado de una lista de enter
 * [Java (desde la 15 para delante)](https://www.oracle.com/co/java/technologies/downloads/) 
 * [Maven](https://maven.apache.org/download.cgi) 
 * [Git](https://git-scm.com/downloads)
+
+### ARQUITECTURA
+
+1. **Aplicación Web de Exploración de Algoritmos de Búsqueda:**
+   - Esta parte involucra la creación de una aplicación web que permita investigar dos algoritmos de búsqueda clave en ciencias de la computación: la búsqueda lineal y la búsqueda binaria.
+   - Tecnologías utilizadas: Maven para gestión de proyectos, Git y GitHub para control de versiones y colaboración, SparkJava como framework para el backend, HTML5 y JavaScript para el frontend.
+   - La aplicación estará desplegada en tres máquinas virtuales EC2 de Amazon Web Services (AWS).
+
+2. **Sistema de Microservicios para Funciones de Ordenamiento con Service Proxy:**
+   - Este aspecto del proyecto se enfoca en el diseño de un sistema de microservicios, con un servicio denominado "Math Services" para realizar funciones de ordenamiento.
+   - El servicio de ordenamiento estará desplegado en al menos dos instancias virtuales EC2, lo que permite escalabilidad y redundancia.
+   - Se implementará un service proxy que recibirá las solicitudes de llamadas desde los clientes y las distribuirá entre las dos instancias del servicio de ordenamiento utilizando un algoritmo de round-robin.
+   - El proxy se desplegará en otra máquina EC2 de AWS para una gestión independiente.
+   - Configuración flexible: Se podrán ajustar las direcciones y puertos de las instancias del servicio en el proxy mediante el uso de variables de entorno del sistema operativo.
+   
+3. **Cliente Web Mínimo para Interacción con el Proxy y Servicios de Ordenamiento:**
+   - Se construirá un cliente web mínimo utilizando HTML y JavaScript.
+   - Este cliente web incluirá formularios para interactuar con el proxy y los servicios de ordenamiento, permitiendo al usuario ingresar valores.
+   - Las solicitudes del cliente hacia el proxy serán asíncronas, invocando los servicios correspondientes para obtener los resultados de las funciones de ordenamiento.
+   - El cliente web se comunicará con el proxy para dirigir las solicitudes a las instancias adecuadas del servicio de ordenamiento.
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/02978b72-93a2-4fdc-a062-a938439677ec)
+
 
 ## INSTALACIÓN Y EJECUCIÓN DE MANERA LOCAL
 
