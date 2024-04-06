@@ -35,7 +35,7 @@ El proyecto implica la creación de dos componentes clave: una aplicación web p
 
 ## INSTALACIÓN Y EJECUCIÓN DE MANERA LOCAL
 
-**NOTA:** En este proyecto se hace uso de la variable de entorno SEARCH_SERVICES, cuyo valor para correrlo en una sola máquina loca es http://localhost:35000/,http://localhost:35000/. En caso que se tengan otras máquinas en las que se puedan hacer peticiones HTTP, simplemente intercambiar localhost por el dominio o dirección ip. 
+**NOTA:** En este proyecto se hace uso de la variable de entorno SEARCH_SERVICES, cuyo valor para correrlo en una sola máquina local es http://localhost:35000/,http://localhost:35000/. En caso que se tengan otras máquinas en las que se puedan hacer peticiones HTTP, simplemente intercambiar localhost por el dominio o dirección ip. 
 
 1. Clona el repositorio:
 ```
@@ -65,7 +65,7 @@ java -cp target/AREP_PT2-1.0-SNAPSHOT.jar org.example.MathServices
 
 ## INSTALACIÓN Y EJECUCIÓN REMOTA (AWS EC2)
 
-**NOTA:** En la instancia que ejecutará el servicio proxy, abrir el puerto 38000 y en las otras dos instancias que ejecutarán el servicio mathservices abrir el puerto 35000.
+**NOTA:** En la instancia que ejecutará el servicio proxy, abrir el puerto 38000 y en las otras dos instancias que ejecutarán el servicio mathservices abrir el puerto 35000. Además, todas las instancias deben tener java, git y maven.
 
 1. Para realizar la ejecución remota, primero es conectarse a 3 instancias de ec2.
 
@@ -99,7 +99,7 @@ mvn clean install
 java -cp target/AREP_PT2-1.0-SNAPSHOT.jar org.example.ServiceProxy
 ```
 
-7. Para ejecutar el servicio de mathservices, ir a las instancia que lo ejecutarán y poner el siguiente comando:
+7. Para ejecutar el servicio de mathservices, ir a las instancias que lo ejecutarán y poner el siguiente comando:
 ```
 java -cp target/AREP_PT2-1.0-SNAPSHOT.jar org.example.MathServices
 ```
