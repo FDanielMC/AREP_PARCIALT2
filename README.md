@@ -151,6 +151,45 @@ Terminal de la instancia a la que el proxy le dirigió la petición:
 
 ![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/c68a4d65-f736-4cf7-a61c-10f4b57386e8)
 
+### Funcionamiento de Búsqueda Binaria
+
+Se hará uso de los siguientes parámetros:
+- Lista: 1,2,3,4,5
+- Valor a buscar: 3
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/8ec009a8-086b-4eef-9d1f-fc29aa632a47)
+
+Cuerpo del JSON de respuesta:
+
+
+
+Terminal de la instancia proxy:
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/b09a0fee-2c48-40b6-b7df-d268c41b845f)
+
+Terminal de la instancia a la que el proxy le dirigió la petición:
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/e887b61f-8d10-468c-9f0f-579d95f0c0e0)
+
+## Prueba de No Funcionamiento de la Búsqueda Binaria
+
+Se hará uso de los siguientes parámetros:
+- Lista: 1,2,3,4,5
+- Valor a buscar: 34
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/6c364272-9e9c-4f23-826a-9d9ba77928cd)
+
+Cuerpo del JSON de respuesta: 
+
+
+
+Terminal de la instancia proxy:
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/fd1ba140-2f65-444d-a0bb-c626ff35df06)
+
+Terminal de la instancia a la que el proxy le dirigió la petición:
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/70b4beff-80d4-40e3-bf38-7ee7f09d6f6b)
 
 ### Vídeo Desplegando el Programa
 
