@@ -104,6 +104,54 @@ java -cp target/AREP_PT2-1.0-SNAPSHOT.jar org.example.ServiceProxy
 java -cp target/AREP_PT2-1.0-SNAPSHOT.jar org.example.MathServices
 ```
 
+## CASOS DE PRUEBA
+
+Estas pruebas fueron realizadas de manera remota: 
+* Servidor proxy: ec2-54-80-193-19.compute-1.amazonaws.com:38000
+* Servidor mathservice: ec2-52-90-130-227.compute-1.amazonaws.com:35000
+* Servidor mathservice: ec2-54-80-142-64.compute-1.amazonaws.com:35000
+
+### Funcionamiento de Búsqueda Líneal
+
+Se hará uso de los siguientes parámetros:
+- Lista: 5,1,4,2,3
+- Valor a buscar: 4
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/897eeab0-7543-483a-aa29-33c82dfa71f7)
+
+Cuerpo del JSON de respuesta:
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/f775be06-7fa3-4604-a516-5cc4a92eae40)
+
+Terminal de la instancia proxy:
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/97a928ef-013a-49bc-998d-5d33027b49b0)
+
+Terminal de la instancia a la que el proxy le dirigió la petición:
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/c4a82208-74d7-47a6-8e24-5d61e398b351)
+
+## Prueba de No Funcionamiento de la Búsqueda Lineal
+
+Se hará uso de los siguientes parámetros:
+- Lista: 5,1,4,2,3
+- Valor a buscar: 45
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/f38e8c31-8cd8-4154-89ef-7a73e85d27fa)
+
+Cuerpo del JSON de respuesta: 
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/1e95f1d7-5a20-440e-9dfb-23b66bb78836)
+
+Terminal de la instancia proxy:
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/5ac3106d-6335-4b57-931d-3ac78be93612)
+
+Terminal de la instancia a la que el proxy le dirigió la petición:
+
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/c68a4d65-f736-4cf7-a61c-10f4b57386e8)
+
+
 ### Vídeo Desplegando el Programa
 
 
