@@ -161,7 +161,7 @@ Se hará uso de los siguientes parámetros:
 
 Cuerpo del JSON de respuesta:
 
-
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/b2df4f01-a27d-4fd1-8be2-dba4cd7d0710)
 
 Terminal de la instancia proxy:
 
@@ -181,7 +181,7 @@ Se hará uso de los siguientes parámetros:
 
 Cuerpo del JSON de respuesta: 
 
-
+![image](https://github.com/FDanielMC/AREP_PARCIALT2/assets/123689924/f0197bbb-6d15-44ee-a6b4-bf250fe308c2)
 
 Terminal de la instancia proxy:
 
