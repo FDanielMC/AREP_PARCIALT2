@@ -75,3 +75,8 @@ mvn clean install
 ```
 java -cp target/AREP_PT2-1.0-SNAPSHOT.jar org.example.ServiceProxy
 ```
+
+7. Para ejecutar el servicio de mathservices, ir a las instancia que lo ejecutarán y poner el siguiente comando:
+```
+java -cp target/AREP_PT2-1.0-SNAPSHOT.jar org.example.MathServices
+```
